@@ -122,6 +122,8 @@ for(i in seq_along(z_ed)){
   tsd=sd(prot_mat[prot_mat$SNAP.contrast=='CN A-',to_z[i]],na.rm=T)
   prot_mat[,z_ed[i]]= (prot_mat[,to_z[i]]-tmean)/tsd
 }
+# paste these proteins to the prot_ind
+prot_ind=c(z_ed, prot_ind)   
    
 # Results matrix (column names)
 res_mat = data.frame(matrix(NA, nrow = length(prot_ind), ncol =66))
@@ -234,7 +236,6 @@ for(i in 1:length(prot_ind)){
     tres=by(tprot,tprot_mat$SNAP.contrast,function(x) mean(x, na.rm=T))
     tres2=by(tprot,tprot_mat$SNAP.contrast,function(x) sd(x, na.rm=T))
     
-    # Note columns adjust depending on contrast you run
     res_mat[i,c(11,13,15,17,19, 21, 23)]=paste(round(tres,2), ' (', round(tres2,2),')',sep='')
     
     # ANCOVA with age,sex, APOE correction
