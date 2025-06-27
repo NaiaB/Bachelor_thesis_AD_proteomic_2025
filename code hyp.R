@@ -23,7 +23,7 @@ rm(list = ls())
 # set working directory
 setwd("/Volumes/education/FHML_MHeNs/Intern_Naia_Barney_Machado/Dataset/results/")
 
-# set working directory
+# set data directory
 data_dir="/Volumes/education/FHML_MHeNs/Intern_Naia_Barney_Machado/Dataset/data/"  #VB van mijn pad: '/Users/bettytijms/Documents/AD_11-12/projecten/MemoProteomicsAD/data/EMIF/'
 
 # Read and load the protein data in 20210407_EMIF_tryp_Proteins_patient_id_test
